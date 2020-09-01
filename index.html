@@ -35,7 +35,7 @@
                         <input class="form-control" id = "coffeeName" type="text">
                     </div>
                     <div>
-                        <a href="#" id="submit" type="submit" class="btn btn-primary btn-lg btn-block">Submit</a>
+                        <a href="#" id="submit1" type="submit" class="btn btn-primary btn-lg btn-block">Submit</a>
 <!--                        <a href = "#" class="btn btn-primary btn-lg btn-block">Submit</a>-->
                     </div>
                 </form>
@@ -53,8 +53,8 @@
                     </div>
                     <form>
                         <div class="card-text">Roast</div>
-                        <label for="roast-selection"></label>
-                        <select id="roast-selection" class="custom-select custom select-lg mb-3">
+                        <label for="roast-addition"></label>
+                        <select id="roast-addition" class="custom-select custom select-lg mb-3">
                             <option>all</option>
                             <option>light</option>
                             <option>medium</option>
@@ -63,11 +63,11 @@
                     </form>
                     <form>
                         <div class="form-group">
-                            <label for="coffeeName">Name</label>
-                            <input class="form-control" id = "coffeeName" type="text">
+                            <label for="newName">Name</label>
+                            <input class="form-control" id = "newName" type="text">
                         </div>
                         <div>
-                            <a href="#" id="submit" type="submit" class="btn btn-primary btn-lg btn-block">Submit</a>
+                            <a href="#" id="submit2" type="submit" class="btn btn-primary btn-lg btn-block">Submit</a>
                         </div>
                     </form>
                 </div>
@@ -79,13 +79,15 @@
             <div class="col-6">
                 <table>
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NAME</th>
-                            <th>ROAST</th>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <th>ID</th>-->
+<!--                            <th>NAME</th>-->
+<!--                            <th>ROAST</th>-->
+<!--                        </tr>-->
                     </thead>
-                    <tbody id="coffees"></tbody>
+                   <div>
+                       <tbody id="coffees"></tbody>
+                   </div>
                 </table>
             </div>
 </div>
