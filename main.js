@@ -16,7 +16,7 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
+// creates coffee list
 function renderCoffee(coffee) {
     var html = '<div class="col-6">';
     html += '<h1 class="d-none">' + coffee.id + '</h1>';
@@ -39,6 +39,8 @@ function renderCoffees(coffees) {
 var list = document.getElementById("coffeeList");
 list.innerHTML = renderCoffees(coffees);
 
+
+// displays coffee name
 function updateCoffees() {
     var filteredCoffees = [];
     coffees.forEach(function (coffee) {
@@ -50,6 +52,8 @@ function updateCoffees() {
     });
     list.innerHTML = renderCoffees(filteredCoffees);
 };
+
+
 
 
 var coffeeSelected = '';
@@ -68,7 +72,23 @@ roastSelection.addEventListener("change", function () {
     updateCoffees();
 });
 
+function createCoffee(inputName, roastType) {
+    var newCoffee = {id: coffees.length + 1,
+                    name: inputName,
+                    roast: roastType}
+                        coffees.push(newCoffee);
+    // log.textContent = log.textContent + `${event.type}: ${event.data}\n`;
+}
 
+
+var submitNewCoffee = document.querySelector('#addCoffee');
+    submitNewCoffee.addEventListener('click', function (){
+        var newCoffeeRoast = document.querySelector('#input2');
+        var newCoffeeName = document.querySelector('#newCoffeeName');
+            createCoffee(newCoffeeName.value, newCoffeeRoast.value);
+            updateCoffees();
+        }
+    )
 
 
 
