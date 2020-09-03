@@ -56,13 +56,13 @@ function updateCoffees() {
 
 
 
+
 var coffeeSelected = '';
 var coffeeType = document.getElementById('coffeeNameInput');
 coffeeType.addEventListener('keyup', function () {
     coffeeSelected = coffeeType.value;
     updateCoffees();
 });
-
 
 var selectedRoast = 'all';
 var roastSelection = document.querySelector('#input');
@@ -72,6 +72,8 @@ roastSelection.addEventListener("change", function () {
     updateCoffees();
 });
 
+
+// creates new coffee
 function createCoffee(inputName, roastType) {
     var newCoffee = {id: coffees.length + 1,
                     name: inputName,
