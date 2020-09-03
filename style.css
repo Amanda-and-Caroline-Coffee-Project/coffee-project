@@ -33,8 +33,9 @@ p{
     border-color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
-
 }
+
+
 #mainBox{
     margin-right: 0!important;
 }
@@ -56,6 +57,6 @@ footer{
     height: 2em;
     line-height: 2em ;
 }
-#fb, #insta >a:hover{
+#social-links a:hover{
     color: #cbc9b9;
 }
