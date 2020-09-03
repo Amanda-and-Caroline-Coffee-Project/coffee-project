@@ -6,7 +6,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
-    height: ;
 
 }
 #title {
@@ -49,18 +48,14 @@ footer{
     background-color: #180e0e;
     margin: 0;
 }
-#social-links > ul > li {
-    list-style: none;
-}
-#social-links > ul > li > a{
-    color: #dea94a;
+
+#social-links a{
+    color: #cd9468;
     font-size: 2em;
     padding: 1em;
     height: 2em;
     line-height: 2em ;
 }
-#social-links > ul > li > a:hover{
+#fb, #insta >a:hover{
     color: #cbc9b9;
-
-}
 }
