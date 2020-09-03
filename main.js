@@ -16,6 +16,11 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+// if(localStorage.getItem('newCoffeeNames') !== null) {
+//     coffees = JSON.parse(localStorage.getItem('newCoffeeNames'));
+// }
+
+
 // creates coffee list
 function renderCoffee(coffee) {
     var html = '<div class="col-12 col-md-6">';
@@ -90,14 +95,8 @@ var submitNewCoffee = document.querySelector('#addCoffee');
             createCoffee(newCoffeeName.value, newCoffeeRoast.value);
             updateCoffees();
 
-            let newCoffeeNames;
-            if(localStorage.getItem('newCoffeeName') === null) {
-                newCoffeeNames = [];
-            } else {
-                newCoffeeNames = JSON.parse(localStorage.getItem('newCoffeeName'));
-            }
-            newCoffeeNames.push(newCoffeeName);
-            localStorage.setItem("newCoffeeNames", JSON.stringify(newCoffeeNames));
+            // let newCoffeeNames = coffees;
+            // localStorage.setItem("newCoffeeNames", JSON.stringify(newCoffeeNames));
         }
     )
 
