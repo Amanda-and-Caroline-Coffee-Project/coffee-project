@@ -16,9 +16,10 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-// if(localStorage.getItem('newCoffeeNames') !== null) {
-//     coffees = JSON.parse(localStorage.getItem('newCoffeeNames'));
-// }
+if(localStorage.getItem('newCoffeeNames') !== null) {
+    coffees = JSON.parse(localStorage.getItem('newCoffeeNames'));
+}
+
 
 
 // creates coffee list
@@ -41,11 +42,11 @@ function renderCoffees(coffees) {
 }
 
 
+
+// function that filters through the "coffees" array based on the selected roast.
 var list = document.getElementById("coffeeList");
 list.innerHTML = renderCoffees(coffees);
 
-
-// displays coffee name
 function updateCoffees() {
     var filteredCoffees = [];
     coffees.forEach(function (coffee) {
@@ -57,8 +58,7 @@ function updateCoffees() {
     });
     list.innerHTML = renderCoffees(filteredCoffees);
 };
-
-// roast selection choice
+//event listener that utilizes the "updateCoffees" function for the "select" roast menu.
 var selectedRoast = 'all';
 var roastSelection = document.querySelector('#input');
 roastSelection.addEventListener("change", function () {
@@ -67,7 +67,9 @@ roastSelection.addEventListener("change", function () {
     updateCoffees();
 });
 
-// coffee name input text
+
+// event listener that utilizes the "updateCoffees" function to filter through "coffees" array based on what is typed in the
+// "input" box.
 var coffeeSelected = '';
 var coffeeType = document.getElementById('coffeeNameInput');
 coffeeType.addEventListener('keyup', function () {
@@ -78,34 +80,36 @@ coffeeType.addEventListener('keyup', function () {
 
 
 
-// creates new coffee
+// "Add a Coffee" function that creates a new coffee based on the roast and name then, adds it too the "coffees" array.
 function createCoffee(inputName, roastType) {
     var newCoffee = {id: coffees.length + 1,
                     name: inputName,
                     roast: roastType}
                         coffees.push(newCoffee);
-    // log.textContent = log.textContent + `${event.type}: ${event.data}\n`;
 }
 
-
-var submitNewCoffee = document.querySelector('#addCoffee');
+//Event listener that takes in the new roast selection and new coffee name input.
+var submitNewCoffee = document.querySelector('#addCoffee');//submit button
     submitNewCoffee.addEventListener('click', function (){
-        var newCoffeeRoast = document.querySelector('#input2');
-        var newCoffeeName = document.querySelector('#newCoffeeName');
+        var newCoffeeRoast = document.querySelector('#input2');//roast selection
+        var newCoffeeName = document.querySelector('#newCoffeeName');//name input
             createCoffee(newCoffeeName.value, newCoffeeRoast.value);
             updateCoffees();
 
-            // let newCoffeeNames = coffees;
-            // localStorage.setItem("newCoffeeNames", JSON.stringify(newCoffeeNames));
+            let newCoffeeNames = coffees;
+            localStorage.setItem("newCoffeeNames", JSON.stringify(newCoffeeNames));
+
         }
     )
 
 
-// var submitButton1 = document.querySelector('#submit1');
-// var submitButton2 = document.querySelector('#submit2');
-// var roastSelection = document.querySelector('#roast-selection');
-//
-//
-//
-// submitButton1.addEventListener('click', updateCoffees);
-// submitButton2.addEventListener('click', updateCoffees);
+window.localStorage.clear();
+
+function clearStorage(){
+    localStorage.removeItem("newCoffeeNames");
+    return list;
+}
+
+
+
+
