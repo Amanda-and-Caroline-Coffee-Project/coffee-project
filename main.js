@@ -24,7 +24,7 @@ if(localStorage.getItem('newCoffeeNames') !== null) {
 
 // creates coffee list
 function renderCoffee(coffee) {
-    var html = '<div class="col-12 col-md-6">';
+    var html = '<div id="listStyle" class="col-12 col-md-6">';
     html += '<h1 class="d-none">' + coffee.id + '</h1>';
     html += '<h4>' + coffee.name + '</h4>';
     html += '<p>' + coffee.roast + '</p>';
